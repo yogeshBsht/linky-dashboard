@@ -17,8 +17,7 @@ export default function Mylinks({ linkURL }) {
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
-  const { REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
-  const {REACT_APP_HOME_PAGE} = process.env.VERCEL_URL;
+  const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
 
   const username = storageService.getToken();
 

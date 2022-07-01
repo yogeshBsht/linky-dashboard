@@ -27,7 +27,8 @@ import Alert from "react-bootstrap/Alert";
 
 // loginUser calls the API for authN
 async function loginUser(credentials) {
-  return fetch("http://localhost:5000/login", {
+  const { REACT_APP_API_URL } = process.env;
+  return fetch(`${REACT_APP_API_URL}/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

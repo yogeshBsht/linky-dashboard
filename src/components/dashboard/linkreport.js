@@ -19,7 +19,7 @@ export default function Linkreport({ linkURL }) {
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const [visitorID, setVisitorID] = useState("");
-  const { REACT_APP_ROOT_PATH } = process.env;
+  const { REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
 
   const username = storageService.getToken();
   let { linkID } = useParams();
@@ -30,7 +30,7 @@ export default function Linkreport({ linkURL }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/link_info/" + linkID, {
+      .get(`${REACT_APP_API_URL}/link_info/${linkID}`, {
         headers: headers,
       })
       .then((response) => {
@@ -45,7 +45,7 @@ export default function Linkreport({ linkURL }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/visitor_info/" + linkID, {
+      .get(`${REACT_APP_API_URL}/visitor_info/${linkID}`, {
         headers: headers,
       })
       .then((response) => {

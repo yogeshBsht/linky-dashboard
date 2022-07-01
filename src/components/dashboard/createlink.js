@@ -32,7 +32,7 @@ export default function Createlink({ linkURL }) {
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("");
   const username = storageService.getToken();
-  const { REACT_APP_HOME_PAGE } = process.env;
+  const { REACT_APP_HOME_PAGE, REACT_APP_API_URL } = process.env;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ export default function Createlink({ linkURL }) {
       "x-auth-user": username,
     };
     const response = axios
-      .post("http://localhost:5000/create_link", data, {
+      .post(`${REACT_APP_API_URL}/create_link`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -142,7 +142,7 @@ export default function Createlink({ linkURL }) {
           <Form.Label htmlFor="basic-url">Your URL:</Form.Label>
           <InputGroup xs="auto" className="mb-3">
             <InputGroup.Text id="basic-addon3">
-            `${REACT_APP_HOME_PAGE}/{username}/{linkname}`
+            {`${REACT_APP_HOME_PAGE}/${username}/${linkname}`}
             </InputGroup.Text>
           </InputGroup>
           <Button variant="primary" type="submit">

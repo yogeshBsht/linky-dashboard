@@ -8,6 +8,7 @@ export default function Publicroute({ linkURL }) {
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
+  const { REACT_APP_API_URL } = process.env;
 
   let { username, linkname } = useParams();
 
@@ -20,7 +21,7 @@ export default function Publicroute({ linkURL }) {
       "x-client-country": clientIP.data.country,
     };
     await axios.get(
-      "http://localhost:5000/" + username + "/" + linkname,
+      `${REACT_APP_API_URL}/${username}/${linkname}`,
       {
         headers: headers,
       }

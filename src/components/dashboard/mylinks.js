@@ -17,11 +17,10 @@ export default function Mylinks({ linkURL }) {
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
+  const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
 
   const username = storageService.getToken();
-  
-  const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH } = process.env;
-  const URL = `${REACT_APP_HOME_PAGE}`;
+
   let row_no = 0;
   const headers = {
     "x-auth-user": username,
@@ -29,7 +28,7 @@ export default function Mylinks({ linkURL }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/mylinks", {
+      .get(`${REACT_APP_API_URL}/mylinks`, {
         headers: headers,
       })
       .then((response) => {
@@ -68,8 +67,7 @@ export default function Mylinks({ linkURL }) {
                 <td scope="row">{++row_no}</td>
                 <td>{data.link_name}</td>
                 <td>
-                  {URL}
-                  {data.link_url}
+                  {`${REACT_APP_HOME_PAGE}${data.link_url}`}
                 </td>
                 <td>{data.description}</td>
                 <td>{data.unique_visitor_count}</td>

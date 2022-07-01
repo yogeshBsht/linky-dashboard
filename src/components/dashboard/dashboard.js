@@ -8,9 +8,10 @@ export default function Dashboard({linkURL}) {
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const username = storageService.getToken();
+  const {REACT_APP_API_URL} = process.env;
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:5000/dashboard')
+    const response = await fetch(`${REACT_APP_API_URL}/dashboard`)
     if (!response.ok) {
       throw new Error('Data coud not be fetched!')
     } 

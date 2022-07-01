@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { storageService } from "../../storage/storage";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
-import Table from "react-bootstrap/Table";
 import Linkreport from "./linkreport";
 import { Link } from "react-router-dom";
-import { Route } from "react-router-dom";
 
 export default function Mylinks({ linkURL }) {
   const [links, setLinks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
 

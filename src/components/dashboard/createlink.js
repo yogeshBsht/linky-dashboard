@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { storageService } from "../../storage/storage";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
@@ -28,8 +28,8 @@ import Alert from 'react-bootstrap/Alert';
 export default function Createlink({ linkURL }) {
   const [linkname, setLinkname] = useState("");
   const [description, setDescription] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("");
   const username = storageService.getToken();
   const { REACT_APP_HOME_PAGE, REACT_APP_API_URL } = process.env;

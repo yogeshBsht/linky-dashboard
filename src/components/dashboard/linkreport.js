@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { storageService } from "../../storage/storage";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
 import Table from "react-bootstrap/Table";
 import InfoCard from "../infocard";
 import { useParams, Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 export default function Linkreport({ linkURL }) {
   const [links, setLinks] = useState([]);
   const [visitors, setVisitors] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const [visitorID, setVisitorID] = useState("");
   const { REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;

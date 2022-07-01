@@ -5,7 +5,7 @@ import axios from "axios";
 import Alert from "react-bootstrap/Alert";
 
 export default function Publicroute({ linkURL }) {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const { REACT_APP_API_URL } = process.env;

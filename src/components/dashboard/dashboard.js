@@ -3,9 +3,8 @@ import Alert from "react-bootstrap/Alert";
 import { storageService } from "../../storage/storage";
 
 export default function Dashboard({linkURL}) {
-  const [countryItems, setCountryItems] = useState([])
-  const [loading, setLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const username = storageService.getToken();
   const {REACT_APP_API_URL} = process.env;

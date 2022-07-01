@@ -141,7 +141,7 @@ export default function Createlink({ linkURL }) {
           <Form.Label htmlFor="basic-url">Your URL:</Form.Label>
           <InputGroup xs="auto" className="mb-3">
             <InputGroup.Text id="basic-addon3">
-              http://localhost:3000/{username}/{linkname}
+            `${REACT_APP_HOME_PAGE}/{username}/{linkname}`
             </InputGroup.Text>
           </InputGroup>
           <Button variant="primary" type="submit">

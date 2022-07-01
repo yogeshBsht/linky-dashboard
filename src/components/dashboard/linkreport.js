@@ -108,7 +108,7 @@ export default function Linkreport({ linkURL }) {
                     <td scope="row">{++row_no}</td>
                     <td>
                       <Link
-                        to={`/linkreport/${data.link_id}`}
+                        to={`${REACT_APP_ROOT_PATH}/linkreport/${data.link_id}`}
                         element={<Linkreport />}
                         onClick={() => {
                           setVisitorID(data.visitor_id);

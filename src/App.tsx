@@ -67,17 +67,17 @@ export default function App() {
     <div className="wrapper">
       <Navbar sticky="top" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Linky-App</Navbar.Brand>
+          <Navbar.Brand href={`${REACT_APP_ROOT_PATH}/`}>Linky-App</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/create_link">Create Link</Nav.Link>
-            <Nav.Link href="/mylinks">My Links</Nav.Link>
+            <Nav.Link href={`${REACT_APP_ROOT_PATH}/create_link`}>Create Link</Nav.Link>
+            <Nav.Link href={`${REACT_APP_ROOT_PATH}/mylinks`}>My Links</Nav.Link>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
-            {isLoggedIn == false && <Nav.Link href="/">Sign In</Nav.Link>}
+            {isLoggedIn == false && <Nav.Link href={`${REACT_APP_ROOT_PATH}/`}>Sign In</Nav.Link>}
             {isLoggedIn == true && (
               <Nav.Link
                 onClick={() => storageService.saveToken("")}
-                href="/"
+                href={`${REACT_APP_ROOT_PATH}/`}
               >
                 Sign Out
               </Nav.Link>
@@ -87,12 +87,11 @@ export default function App() {
       </Navbar>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={(isLoggedIn==true) ? <Dashboard /> : <Login setToken={setToken} />}/>
-          <Route path="/dashboard" element={(isLoggedIn==true) ? <Dashboard /> : <Login setToken={setToken} />}/>
-          <Route path="/create_link" element={(isLoggedIn==true) ? <Createlink linkURL={undefined} /> : <Login setToken={setToken} />}/>
-          <Route path="/mylinks" element={(isLoggedIn==true) ? <Mylinks linkURL={undefined} /> : <Login setToken={setToken} />}/>    
-          <Route path="/linkreport/:linkID" element={(isLoggedIn==true) ? <Linkreport linkURL={undefined} /> : <Login setToken={setToken} />}/>
-          <Route path="/:username/:linkname" element={<Publicroute linkURL={undefined} />}/>
+          <Route path={`${REACT_APP_ROOT_PATH}/`} element={(isLoggedIn==true) ? <Dashboard /> : <Login setToken={setToken} />}/>
+          <Route path={`${REACT_APP_ROOT_PATH}/create_link`} element={(isLoggedIn==true) ? <Createlink linkURL={undefined} /> : <Login setToken={setToken} />}/>
+          <Route path={`${REACT_APP_ROOT_PATH}/mylinks`} element={(isLoggedIn==true) ? <Mylinks linkURL={undefined} /> : <Login setToken={setToken} />}/>    
+          <Route path={`${REACT_APP_ROOT_PATH}/linkreport/:linkID`} element={(isLoggedIn==true) ? <Linkreport linkURL={undefined} /> : <Login setToken={setToken} />}/>
+          <Route path={`${REACT_APP_ROOT_PATH}/:username/:linkname`} element={<Publicroute linkURL={undefined} />}/>
           <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>

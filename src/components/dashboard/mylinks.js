@@ -19,7 +19,7 @@ export default function Mylinks({ linkURL }) {
   const [msg, setMsg] = useState("Loading");
 
   const username = storageService.getToken();
-  const URL = "http://localhost:3000"
+  const URL = `${REACT_APP_HOME_PAGE}`;
   let row_no = 0;
   const headers = {
     "x-auth-user": username,
@@ -72,7 +72,7 @@ export default function Mylinks({ linkURL }) {
                 <td>{data.description}</td>
                 <td>{data.unique_visitor_count}</td>
                 <td>
-                  <Link to={`/linkreport/${data.id}`} element={<Linkreport />}>
+                  <Link to={`${REACT_APP_ROOT_PATH}/linkreport/${data.id}`} element={<Linkreport />}>
                     Report-{data.id}
                   </Link>
                 </td>

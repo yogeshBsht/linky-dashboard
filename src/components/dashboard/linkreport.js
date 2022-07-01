@@ -19,6 +19,7 @@ export default function Linkreport({ linkURL }) {
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const [visitorID, setVisitorID] = useState("");
+  const { REACT_APP_ROOT_PATH } = process.env;
 
   const username = storageService.getToken();
   let { linkID } = useParams();

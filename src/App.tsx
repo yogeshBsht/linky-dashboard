@@ -30,7 +30,6 @@ function isAdminURL() {
   let path = window.location.pathname;
   if (
     path === "/" ||
-    path === "/dashboard" ||
     path === "/create_link" ||
     path === "mylinks" ||
     path === "linkreport"
@@ -50,6 +49,8 @@ function isLinkyURL() {
 }
 
 export default function App() {
+  const { REACT_APP_ROOT_PATH } = process.env;
+  
   // returns the token from local storage & render Login if no token
   const [token, setToken] = useState(storageService.getToken());
 

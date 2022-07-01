@@ -19,6 +19,8 @@ export default function Mylinks({ linkURL }) {
   const [msg, setMsg] = useState("Loading");
 
   const username = storageService.getToken();
+  
+  const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH } = process.env;
   const URL = `${REACT_APP_HOME_PAGE}`;
   let row_no = 0;
   const headers = {

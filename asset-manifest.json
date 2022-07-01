@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/linky-dashboard/static/css/main.79782f60.css",
-    "main.js": "/linky-dashboard/static/js/main.0cbd35c0.js",
+    "main.js": "/linky-dashboard/static/js/main.714b037b.js",
     "static/js/787.f1d5440c.chunk.js": "/linky-dashboard/static/js/787.f1d5440c.chunk.js",
     "index.html": "/linky-dashboard/index.html",
     "main.79782f60.css.map": "/linky-dashboard/static/css/main.79782f60.css.map",
-    "main.0cbd35c0.js.map": "/linky-dashboard/static/js/main.0cbd35c0.js.map",
+    "main.714b037b.js.map": "/linky-dashboard/static/js/main.714b037b.js.map",
     "787.f1d5440c.chunk.js.map": "/linky-dashboard/static/js/787.f1d5440c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.79782f60.css",
-    "static/js/main.0cbd35c0.js"
+    "static/js/main.714b037b.js"
   ]
 }

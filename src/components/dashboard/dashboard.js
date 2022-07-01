@@ -22,14 +22,13 @@ export default function Dashboard({linkURL}) {
   useEffect(() => {
     fetchData()
       .then((res) => {
-        // setCountryItems(res)
         setMsg('Logged In')
         console.log(msg)
-        setLoading(false);
+        // setLoading(false);
       })
       .catch((e) => {
-        setLoading(false);
-        setHasError(true)
+        // setLoading(false);
+        // setHasError(true)
         setMsg(e.message)
       })
   }, [])

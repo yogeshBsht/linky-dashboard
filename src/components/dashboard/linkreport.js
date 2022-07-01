@@ -65,7 +65,6 @@ export default function Linkreport({ linkURL }) {
             <InfoCard
               title="Total Vistors"
               infoDescription="Total visits to the link"
-              isLoading={false}
               value={links.total_visitor_count}
             ></InfoCard>
           </div>
@@ -73,7 +72,6 @@ export default function Linkreport({ linkURL }) {
             <InfoCard
               title="Unique Vistors"
               infoDescription="Number of unique visitors of the link"
-              isLoading={false}
               value={links.unique_visitor_count}
             ></InfoCard>
           </div>
@@ -81,7 +79,6 @@ export default function Linkreport({ linkURL }) {
             <InfoCard
               title="Most visited country"
               infoDescription="Country with most visitors"
-              isLoading={false}
               value={links.most_visited_country}
             ></InfoCard>
           </div>

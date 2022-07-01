@@ -32,7 +32,8 @@ export default function Createlink({ linkURL }) {
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("");
   const username = storageService.getToken();
-  const { REACT_APP_HOME_PAGE, REACT_APP_API_URL } = process.env;
+  const { REACT_APP_API_URL } = process.env;
+  const {REACT_APP_HOME_PAGE} = process.env.VERCEL_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

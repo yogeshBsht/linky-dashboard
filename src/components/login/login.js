@@ -2,27 +2,9 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "./login.css";
 import { storageService } from "../../storage/storage";
-// import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-
-// async function loginUser(credentials) {
-//   // const {username, password} = credentials;
-//   // const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
-//   // const bufferFrom = require('buffer-from');
-//   // const token = bufferFrom(`${username}:${password}`, 'utf8').toString('base64')
-//   return axios.post("http://localhost:5000/login", {
-//     headers: {
-//       // 'Authorization': `Basic ${token}`
-//       "Content-Type": "application/json",
-//           },
-//           body: JSON.stringify(credentials),
-//   })
-//     .then((data) => data.json())
-//     .then((res) => res.token)
-//     .catch((err) => alert(err.response.data));
-// }
 
 
 // loginUser calls the API for authN
@@ -63,14 +45,7 @@ export default function Login({ setToken }) {
       username,
       password,
     });
-    // if (typeof token === undefined || token === null) {
-    //   setToken(username);
-    //   storageService.saveToken(username);
-    // } else {
-    //   alert("all done " + token);
-    //   setToken(token);
-    //   storageService.saveToken(username);
-    // }
+
     if (token === username) {
       console.log(token);
       setToken(token); // stores token in JS memory

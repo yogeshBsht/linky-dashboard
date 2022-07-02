@@ -1,7 +1,6 @@
 import Card from "react-bootstrap/Card";
 
 export default function Infocard({title, infoDescription,value}) {
-//   let title = title;
     return (
     <Card
       bg={"Light".toLowerCase()}

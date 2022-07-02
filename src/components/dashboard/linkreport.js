@@ -10,8 +10,6 @@ import { useParams, Link } from "react-router-dom";
 export default function Linkreport({ linkURL }) {
   const [links, setLinks] = useState([]);
   const [visitors, setVisitors] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const [visitorID, setVisitorID] = useState("");
   const { REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;

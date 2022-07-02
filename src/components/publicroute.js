@@ -5,7 +5,6 @@ import axios from "axios";
 import Alert from "react-bootstrap/Alert";
 
 export default function Publicroute({ linkURL }) {
-  // const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const { REACT_APP_API_URL } = process.env;
@@ -13,7 +12,7 @@ export default function Publicroute({ linkURL }) {
   let { username, linkname } = useParams();
 
   const fetchData = async () => {
-    let clientIP = await axios.get(" https://api.country.is");
+    let clientIP = await axios.get("https://api.country.is");
     const clientID = storageService.getClientId();
     const headers = {
       "x-client-id": clientID,
@@ -31,13 +30,10 @@ export default function Publicroute({ linkURL }) {
   useEffect(() => {
     fetchData()
       .then((res) => {
-        // setCountryItems(res)
         setMsg("Visit recorded");
-        // setLoading(false);
         console.log("recorded")
       })
       .catch((e) => {
-        // setLoading(false);
         setHasError(true);
         setMsg("Request Failed");
         console.log(e.message);

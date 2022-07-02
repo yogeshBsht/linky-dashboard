@@ -8,40 +8,18 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import Alert from 'react-bootstrap/Alert';
 
-// class App extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       this.state={
-//         visible : false
-//       }
-//     }
-  
-//     onShowAlert = ()=>{
-//       this.setState({visible:true},()=>{
-//         window.setTimeout(()=>{
-//           this.setState({visible:false})
-//         },5000)
-//       });
-//     }
-// }
-
 export default function Createlink({ linkURL }) {
   const [linkname, setLinkname] = useState("");
   const [description, setDescription] = useState("");
-  // const [loading, setLoading] = useState(true);
-  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("");
   const username = storageService.getToken();
   const { REACT_APP_HOME_PAGE, REACT_APP_API_URL } = process.env;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // client-side field validation
-
-    setMsg("");
     const data = {
       link_name: linkname,
-      link_description: description,
+      description: description,
     };
     const headers = {
       "x-auth-user": username,
@@ -70,44 +48,11 @@ export default function Createlink({ linkURL }) {
       });
   };
 
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     const username = storageService.getToken();
-  //     const headers = {
-  //       "x-auth-user": username,
-  //     };
-  //     const response = await axios.post("http://localhost:5000/create_link", {
-  //       headers: headers,
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error("Data could not be fetched!");
-  //     } else {
-  //       return response.json();
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     fetchData()
-  //       .then((res) => {
-  //         // setCountryItems(res)
-  //         setMsg("Hello, user");
-  //         console.log(msg);
-  //         setLoading(false);
-  //       })
-  //       .catch((e) => {
-  //         setLoading(false);
-  //         setHasError(true);
-  //         setMsg(e.message);
-  //         console.log(e.message);
-  //       });
-  //   }, []);
-
   return (
     <div className="row">
         <Alert variant='info'>
           {msg}
         </Alert>
-      {/* <h2 className="mb-3">{msg}</h2>( */}
       <div className="login-wrapper">
         <h2>Create Link Form</h2>
         <Form onSubmit={handleSubmit}>

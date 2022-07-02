@@ -3,8 +3,6 @@ import Alert from "react-bootstrap/Alert";
 import { storageService } from "../../storage/storage";
 
 export default function Dashboard({linkURL}) {
-  // const [loading, setLoading] = useState(true);
-  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const username = storageService.getToken();
   const {REACT_APP_API_URL} = process.env;
@@ -23,12 +21,8 @@ export default function Dashboard({linkURL}) {
     fetchData()
       .then((res) => {
         setMsg('Logged In')
-        console.log(msg)
-        // setLoading(false);
       })
       .catch((e) => {
-        // setLoading(false);
-        // setHasError(true)
         setMsg(e.message)
       })
   }, [])

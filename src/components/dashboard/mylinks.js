@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 
 export default function Mylinks({ linkURL }) {
   const [links, setLinks] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const [hasError, setHasError] = useState(false);
   const [msg, setMsg] = useState("Loading");
   const { REACT_APP_HOME_PAGE, REACT_APP_ROOT_PATH, REACT_APP_API_URL } = process.env;
 
@@ -31,8 +29,6 @@ export default function Mylinks({ linkURL }) {
       .then((data) => {
         setMsg("Links fetched successfully");
         setLinks(data);
-        // console.log(data);
-        // console.log(msg);
       });
   }, []);
 

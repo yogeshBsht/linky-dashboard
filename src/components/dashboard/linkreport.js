@@ -33,6 +33,11 @@ export default function Linkreport({ linkURL }) {
       .then((data) => {
         setMsg("Links fetched successfully");
         setLinks(data);
+      })
+      .catch((error) => {
+        if (error.response) {
+          setMsg("Link information unavailable for given link");
+        }
       });
   }, []);
 
@@ -48,6 +53,11 @@ export default function Linkreport({ linkURL }) {
       .then((data) => {
         setMsg("Link report generated successfully");
         setVisitors(data);
+      })
+      .catch((error) => {
+        if (error.response) {
+          setMsg("Visitor information unavailable for given link");
+        }
       });
   }, []);
 
